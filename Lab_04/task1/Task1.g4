@@ -29,7 +29,6 @@ defaultClause
 printStatement : 'print' '(' expr ')' ';' ;
 variableAssignment : ID '=' expr ';' ;
 
-// Renamed from 'expression' to 'expr' to match your Makefile
 expr 
     : INT 
     | ID 
