@@ -1,0 +1,6 @@
+int main() {
+    // Write C code here
+    printf("Try programiz.pro");
+    i, 
+    return 0;
+}
