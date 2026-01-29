@@ -1,0 +1,42 @@
+# ================== CONFIG ==================
+# Ensure this path matches exactly where your JAR is located
+ANTLR_JAR = C:/ANTLR4/antlr-4.13.2-complete.jar
+GRAMMAR   = Task1
+START     = program
+INPUT     = input.txt
+
+JAVA      = java
+JAVAC     = javac
+# Using quotes for the classpath to handle potential spaces in Windows paths
+CLASSPATH = ".;$(ANTLR_JAR)"
+
+# ================== TARGETS ==================
+
+# Default target: generates, compiles, and runs the GUI
+all: generate compile run
+
+# Generate lexer & parser from .g4
+generate:
+	@echo [INFO] Generating ANTLR files...
+	$(JAVA) -jar $(ANTLR_JAR) $(GRAMMAR).g4
+	@echo [OK] ANTLR generation completed.
+
+# Compile all Java files including generated ones
+compile:
+	@echo [INFO] Compiling Java sources...
+	$(JAVAC) -cp $(CLASSPATH) *.java
+	@echo [OK] Compilation completed.
+
+# Run TestRig with the GUI flag
+run:
+	@echo [INFO] Running TestRig with $(INPUT)...
+	$(JAVA) -cp $(CLASSPATH) org.antlr.v4.gui.TestRig $(GRAMMAR) $(START) -gui $(INPUT)
+	@echo [OK] TestRig finished successfully.
+
+# Clean all generated files using PowerShell (Windows compatible)
+clean:
+	@echo [INFO] Cleaning generated files...
+	@powershell -Command "Remove-Item -Force -ErrorAction SilentlyContinue *.class"
+	@powershell -Command "Remove-Item -Force -ErrorAction SilentlyContinue $(GRAMMAR)*.java"
+	@powershell -Command "Remove-Item -Force -ErrorAction SilentlyContinue *.tokens"
+	@echo [OK] Clean completed.

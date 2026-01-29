@@ -1,0 +1,24 @@
+To parse this grammar using ANTLR4:
+
+	1. Make sure Java is installed ('java --version').
+
+	2. Download ANTLR4 ('antlr-4.13.1-complete.jar') from 'https://www.antlr.org/' and save it into 'C:\ANTLR4'.
+
+	3. Open Environment Variables and add new System Variable: 
+		Name: ANTLR_JAR
+		Value: C:\ANTLR4\antlr-4.13.1-complete.jar
+
+	4. Add to Path: 'C:\ANTLR4'.
+
+	5. Create file: 'C:\ANTLR4\antlr.bat' and write:
+		@echo off
+		java -jar "%ANTLR_JAR%" %*
+
+	6. Write Context-Free-Grammar in the ANTLR4 format. (In this case CFG.g4)
+	
+	7. Create a .txt file and write a test string to parse using the CFG.
+	
+	8. Finally run the following commands:
+		a. java -jar C:\ANTLR4\antlr-4.13.2-complete.jar Expr.g4
+		b. javac -cp ".;C:\ANTLR4\antlr-4.13.2-complete.jar" *.java
+		c. java -cp ".;C:\ANTLR4\antlr-4.13.2-complete.jar" org.antlr.v4.gui.TestRig Expr expr -gui input.txt

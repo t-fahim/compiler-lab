@@ -1,0 +1,13 @@
+x = 5;
+switch (x + 10) {
+    case 1:
+        print(1);
+    case 2:
+    case 3:
+        {
+            y = 20;
+            print(y);
+        }
+    default:
+        print(0);
+}

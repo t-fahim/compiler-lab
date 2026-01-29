@@ -1,0 +1,43 @@
+# ===============================
+# Java / ANTLR project ignores
+# ===============================
+
+# Compiled class files
+*.class
+
+# ANTLR generated Java files
+Math*.java
+Expr*.java
+
+# Generated parser/lexer files in general
+*.interp
+*.tokens
+
+# ANTLR output directories (if you ever create them)
+gen/
+
+# Input/output test files (optional)
+# input.txt
+# *.out
+
+# ===============================
+# IDE / Editor / System files
+# ===============================
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA
+*.iml
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
