@@ -1,0 +1,6 @@
+// Single-line comment
+int x = 5;
+/* Multi-line
+   comment */
+/* Unterminated comment
+x = 10;
