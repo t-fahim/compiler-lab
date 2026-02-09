@@ -1,0 +1,32 @@
+1 MOV R0, #5
+2 MOV R0, #3
+3 ADD R0, #3
+4 MOV a, R0
+
+5 MOV R0, a
+6 MOV R0, #2
+7 MUL R0, #2
+10 MOV R1, b
+9 ADD R1, R0
+8 MOV b, R1
+
+11 MOV R0, b
+12 NOT R0
+13 MOV R0, #0
+14 OR R0, #0
+15 MOV c, R0
+
+16 MOV R0, a
+17 MOV R0, #2
+18 POW R0, #2
+19 MOV d, R0
+
+20 MOV R0, #3
+23 MOV R1, e
+22 IDIV R1, R0
+21 MOV e, R1
+
+24 MOV R0, a
+25 MOV R0, b
+26 ADD R0, b
+27 MOV R0, c
